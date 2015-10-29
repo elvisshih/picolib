@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Picolib::VERSION
   spec.authors       = ["elvis"]
   spec.email         = ["elvis@u3dspace.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.summary       = %q{"A lightweight, flexible library for Picowork with support for the Account Api and Contact"}
+  spec.description   = %q{"Picolib is a Ruby SDK for Picowork. It provides a few public common APIs to use. We wish you can develop creative Apps on Picowork. Jsut enjoy it."}
   spec.homepage      = ""
   spec.license       = "MIT"
 
