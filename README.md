@@ -1,6 +1,6 @@
 # Picolib
 
-TODO: Write a gem description
+Picolib is a Ruby SDK for Picowork. It provides a few public common APIs to use. We wish you can develop creative Apps on Picowork. Jsut enjoy it.
 
 ## Installation
 
