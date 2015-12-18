@@ -13,6 +13,7 @@ module Picolib
       def post_app_install(argument_params)
         path = @end_point + '/uHutt/app/install'
         args = {
+          access_token: @access_token,
           params: argument_params
         }
 
@@ -22,6 +23,7 @@ module Picolib
       def post_app_uninstall(argument_params)
         path = @end_point + '/uHutt/app/uninstall'
         args = {
+          access_token: @access_token,
           params: argument_params
         }
 
