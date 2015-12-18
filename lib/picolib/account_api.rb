@@ -10,48 +10,37 @@ module Picolib
         @debug = debug
       end
 
-      def post_account_suspend(u3d_user_id)
-        uri = URI(@end_point + '/account/suspend')
-        # uri = URI('http://test.u3dspace.com/uHutt/contact/create')
-        req = Net::HTTP::Post.new(uri.path)
-        req.add_field 'authorization', @access_token
-        req.form_data = {
-          staff_id: u3d_user_id
+      def get_account_info
+        path = @end_point + '/account/info'
+        args = {
+          access_token: @access_token
         }
 
-        res = Net::HTTP.start(uri.hostname, uri.port, use_ssl: uri.scheme == 'https') do |http|
-          http.request req
-        end
+        result = Picolib.http_request(path, args, "get", {debug: @debug})
+      end
 
-        if @debug
-          puts "============ API: #{uri} ==============="
-          puts "     u3d_user_id: #{u3d_user_id}"
-          puts "     result: #{res.body}"
-          puts "============ END ======================="
-        end
-        return res
+      def post_account_suspend(u3d_user_id)
+        path = @end_point + '/account/suspend'
+        args = {
+          access_token: @access_token,
+          params: {
+            staff_id: u3d_user_id
+          }
+        }
+
+        result = Picolib.http_request(path, args, "post", {debug: @debug})
       end
 
       def post_account_unsuspend(u3d_user_id)
-        uri = URI(@end_point + '/account/unsuspend')
-        # uri = URI('http://test.u3dspace.com/uHutt/contact/create')
-        req = Net::HTTP::Post.new(uri.path)
-        req.add_field 'authorization', @access_token
-        req.form_data = {
-          staff_id: u3d_user_id
+        path = @end_point + '/account/unsuspend'
+        args = {
+          access_token: @access_token,
+          params: {
+            staff_id: u3d_user_id
+          }
         }
 
-        res = Net::HTTP.start(uri.hostname, uri.port, use_ssl: uri.scheme == 'https') do |http|
-          http.request req
-        end
-
-        if @debug
-          puts "============ API: #{uri} ==============="
-          puts "     u3d_user_id: #{u3d_user_id}"
-          puts "     result: #{res.body}"
-          puts "============ END ======================="
-        end
-        return res
+        result = Picolib.http_request(path, args, "post", {debug: @debug})
       end
     end
   end
