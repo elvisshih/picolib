@@ -11,7 +11,7 @@ module Picolib
       end
 
       def post_client_create(argument_params)
-        path = @end_point + '/client/create'
+        path = @end_point + '/uHutt/client/create'
         args = {
           params: argument_params
         }
@@ -20,7 +20,7 @@ module Picolib
       end
 
       def post_client_update(argument_params)
-        path = @end_point + '/client/update'
+        path = @end_point + '/uHutt/client/update'
         args = {
           params: argument_params
         }
@@ -29,7 +29,7 @@ module Picolib
       end
 
       def post_client_drop(argument_params)
-        path = @end_point + '/client/drop'
+        path = @end_point + '/uHutt/client/drop'
         args = {
           params: argument_params
         }

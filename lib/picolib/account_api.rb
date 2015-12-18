@@ -11,7 +11,7 @@ module Picolib
       end
 
       def get_account_info
-        path = @end_point + '/account/info'
+        path = @end_point + '/uHutt/account/info'
         args = {
           access_token: @access_token
         }
@@ -20,7 +20,7 @@ module Picolib
       end
 
       def post_account_suspend(u3d_user_id)
-        path = @end_point + '/account/suspend'
+        path = @end_point + '/uHutt/account/suspend'
         args = {
           access_token: @access_token,
           params: {
@@ -32,7 +32,7 @@ module Picolib
       end
 
       def post_account_unsuspend(u3d_user_id)
-        path = @end_point + '/account/unsuspend'
+        path = @end_point + '/uHutt/account/unsuspend'
         args = {
           access_token: @access_token,
           params: {

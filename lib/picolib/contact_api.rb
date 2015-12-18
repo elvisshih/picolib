@@ -11,7 +11,7 @@ module Picolib
       end
 
       def get_organization_list
-        path = @end_point + '/organization/list'
+        path = @end_point + '/uHutt/organization/list'
         args = {
           access_token: @access_token
         }
@@ -20,7 +20,7 @@ module Picolib
       end
 
       def post_contact_create(account_params)
-        path = @end_point + '/contact/create'
+        path = @end_point + '/uHutt/contact/create'
         args = {
           access_token: @access_token,
           params: account_params
@@ -30,7 +30,7 @@ module Picolib
       end
 
       def post_contact_tags_members_set(account_params)
-        path = @end_point + '/contact/tags/members/set'
+        path = @end_point + '/uHutt/contact/tags/members/set'
         args = {
           access_token: @access_token,
           params: account_params
@@ -40,7 +40,7 @@ module Picolib
       end
 
       def post_organization_create(org_name)
-        path = @end_point + '/organization/create'
+        path = @end_point + '/uHutt/organization/create'
         args = {
           access_token: @access_token,
           params: {
@@ -52,7 +52,7 @@ module Picolib
       end
 
       def post_organization_member_remove(u3d_user_id, u3d_org_id)
-        path = @end_point + '/organization/member/remove'
+        path = @end_point + '/uHutt/organization/member/remove'
         args = {
           access_token: @access_token,
           params: {
@@ -65,7 +65,7 @@ module Picolib
       end
 
       def get_organization_chart
-        path = @end_point + '/organization/chart'
+        path = @end_point + '/uHutt/organization/chart'
         args = {
           access_token: @access_token
         }
@@ -74,7 +74,7 @@ module Picolib
       end
 
       def post_organization_chart_set(u3d_org_id, chart)
-        path = @end_point + '/organization/chart/set'
+        path = @end_point + '/uHutt/organization/chart/set'
         args = {
           access_token: @access_token,
           params: {
@@ -87,7 +87,7 @@ module Picolib
       end
 
       def post_organization_tags_add(u3d_org_id, group_id)
-        path = @end_point + '/organization/tags/add'
+        path = @end_point + '/uHutt/organization/tags/add'
         args = {
           access_token: @access_token,
           params: {
@@ -100,7 +100,7 @@ module Picolib
       end
 
       def post_organization_tags_remove(u3d_org_id, group_id)
-        path = @end_point + '/organization/tags/remove'
+        path = @end_point + '/uHutt/organization/tags/remove'
         args = {
           access_token: @access_token,
           params: {
@@ -113,7 +113,7 @@ module Picolib
       end
 
       def post_organization_tags_set(u3d_user_id, u3d_org_id, tags)
-        path = @end_point + '/contact/tags/set'
+        path = @end_point + '/uHutt/contact/tags/set'
         args = {
           access_token: @access_token,
           params: {
