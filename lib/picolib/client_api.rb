@@ -13,7 +13,7 @@ module Picolib
       def post_client_create(argument_params)
         path = @end_point + '/uHutt/client/create'
 
-        # transfer array to json
+        # transfer array of params to json type
         if argument_params[:build_type]
           argument_params[:build_type] = argument_params[:build_type].to_json
         end
@@ -29,7 +29,7 @@ module Picolib
       def post_client_update(argument_params)
         path = @end_point + '/uHutt/client/update'
 
-        # transfer array to json
+        # transfer array of params to json type
         if argument_params[:build_type]
           argument_params[:build_type] = argument_params[:build_type].to_json
         end
@@ -45,11 +45,11 @@ module Picolib
       def post_client_drop(argument_params)
         path = @end_point + '/uHutt/client/drop'
 
-        # transfer array to json
+        # transfer array of params to json type
         if argument_params[:build_type]
           argument_params[:build_type] = argument_params[:build_type].to_json
         end
-        
+
         args = {
           access_token: @access_token,
           params: argument_params

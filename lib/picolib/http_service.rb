@@ -9,6 +9,9 @@ module Picolib
         if verb == "post"
           req = Net::HTTP::Post.new(uri.path)
           req.form_data = args[:params]
+          if options[:content_type] == 'json'
+            req.content_type = 'application/json'
+          end
         else
           req = Net::HTTP::Get.new(uri.path)
         end
