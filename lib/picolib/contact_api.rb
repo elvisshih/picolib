@@ -79,7 +79,7 @@ module Picolib
           access_token: @access_token,
           params: {
             organization_id: u3d_org_id,
-            chart: chart.to_json
+            chart: chart
           }
         }
 
@@ -119,7 +119,7 @@ module Picolib
           params: {
             staff_id: u3d_user_id,
             organization_id: u3d_org_id,
-            tags: tags.to_json
+            tags: tags
           }
         }
 

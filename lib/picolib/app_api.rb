@@ -17,7 +17,7 @@ module Picolib
           params: argument_params
         }
 
-        result = Picolib.http_request(path, args, "post", {debug: @debug, content_type: 'json'})
+        result = Picolib.http_request(path, args, "post", {debug: @debug})
       end
 
       def post_app_uninstall(argument_params)
