@@ -42,6 +42,16 @@ module Picolib
 
         result = Picolib.http_request(path, args, "post", {debug: @debug})
       end
+
+      def post_client_grant_token(argument_params)
+        path = @end_point + '/uHutt/client/grant'
+
+        args = {
+          params: argument_params
+        }
+
+        result = Picolib.http_request(path, args, "post", {debug: @debug})
+      end
     end
   end
 end
