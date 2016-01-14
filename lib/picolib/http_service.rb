@@ -14,7 +14,9 @@ module Picolib
         else
           req = Net::HTTP::Get.new(uri.path)
         end
-        req.add_field 'authorization', args[:access_token]
+        if args[:access_token]
+          req.add_field 'authorization', args[:access_token]
+        end
 
         http.request req
       end
