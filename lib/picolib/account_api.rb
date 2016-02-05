@@ -19,25 +19,21 @@ module Picolib
         result = Picolib.http_request(path, args, "get", {debug: @debug})
       end
 
-      def post_account_suspend(u3d_user_id)
+      def post_account_suspend(params)
         path = @end_point + '/uHutt/account/suspend'
         args = {
           access_token: @access_token,
-          params: {
-            staff_id: u3d_user_id
-          }
+          params: params
         }
 
         result = Picolib.http_request(path, args, "post", {debug: @debug})
       end
 
-      def post_account_unsuspend(u3d_user_id)
+      def post_account_unsuspend(params)
         path = @end_point + '/uHutt/account/unsuspend'
         args = {
           access_token: @access_token,
-          params: {
-            staff_id: u3d_user_id
-          }
+          params: params
         }
 
         result = Picolib.http_request(path, args, "post", {debug: @debug})
