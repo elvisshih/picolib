@@ -19,46 +19,41 @@ module Picolib
         result = Picolib.http_request(path, args, "get", {debug: @debug})
       end
 
-      def post_contact_create(account_params)
+      def post_contact_create(params)
         path = @end_point + '/uHutt/contact/create'
         args = {
           access_token: @access_token,
-          params: account_params
+          params: params
         }
 
         result = Picolib.http_request(path, args, "post", {debug: @debug})
       end
 
-      def post_contact_tags_members_set(account_params)
+      def post_contact_tags_members_set(params)
         path = @end_point + '/uHutt/contact/tags/members/set'
         args = {
           access_token: @access_token,
-          params: account_params
+          params: params
         }
 
         result = Picolib.http_request(path, args, "post", {debug: @debug})
       end
 
-      def post_organization_create(org_name)
+      def post_organization_create(params)
         path = @end_point + '/uHutt/organization/create'
         args = {
           access_token: @access_token,
-          params: {
-            organization: org_name
-          }
+          params: params
         }
 
         result = Picolib.http_request(path, args, "post", {debug: @debug})
       end
 
-      def post_organization_member_remove(u3d_user_id, u3d_org_id)
+      def post_organization_member_remove(params)
         path = @end_point + '/uHutt/organization/member/remove'
         args = {
           access_token: @access_token,
-          params: {
-            staff_id: u3d_user_id,
-            organization_id: u3d_org_id
-          }
+          params: params
         }
 
         result = Picolib.http_request(path, args, "post", {debug: @debug})
@@ -73,54 +68,41 @@ module Picolib
         result = Picolib.http_request(path, args, "get", {debug: @debug})
       end
 
-      def post_organization_chart_set(u3d_org_id, chart)
+      def post_organization_chart_set(params)
         path = @end_point + '/uHutt/organization/chart/set'
         args = {
           access_token: @access_token,
-          params: {
-            organization_id: u3d_org_id,
-            chart: chart
-          }
+          params: params
         }
 
         result = Picolib.http_request(path, args, "post", {debug: @debug})
       end
 
-      def post_organization_tags_add(u3d_org_id, group_id)
+      def post_organization_tags_add(params)
         path = @end_point + '/uHutt/organization/tags/add'
         args = {
           access_token: @access_token,
-          params: {
-            organization_id: u3d_org_id,
-            tag: group_id
-          }
+          params: params
         }
 
         result = Picolib.http_request(path, args, "post", {debug: @debug})
       end
 
-      def post_organization_tags_remove(u3d_org_id, group_id)
+      def post_organization_tags_remove(params)
         path = @end_point + '/uHutt/organization/tags/remove'
         args = {
           access_token: @access_token,
-          params: {
-            organization_id: u3d_org_id,
-            tag: group_id
-          }
+          params: params
         }
 
         result = Picolib.http_request(path, args, "post", {debug: @debug})
       end
 
-      def post_organization_tags_set(u3d_user_id, u3d_org_id, tags)
+      def post_organization_tags_set(params)
         path = @end_point + '/uHutt/contact/tags/set'
         args = {
           access_token: @access_token,
-          params: {
-            staff_id: u3d_user_id,
-            organization_id: u3d_org_id,
-            tags: tags
-          }
+          params: params
         }
 
         result = Picolib.http_request(path, args, "post", {debug: @debug})
