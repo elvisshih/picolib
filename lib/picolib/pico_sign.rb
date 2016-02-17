@@ -1,5 +1,3 @@
-require "Base64"
-
 module Picolib
   module PicoSign
     def self.decode_signed_request(signed_request, client_secret)
