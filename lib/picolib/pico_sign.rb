@@ -14,7 +14,7 @@ module Picolib
     def self.encode_signed_request(payload, client_secret)
       encoded_data = Base64.urlsafe_encode64(payload)
       signature = OpenSSL::HMAC::digest('sha256', client_secret, encoded_data)
-      encoded_signature = Base64.urlsafe_encode64(signature)
+      encoded_signature = Base64.strict_encode64(signature)
       [encoded_signature, encoded_data].join('.')
     end
   end
