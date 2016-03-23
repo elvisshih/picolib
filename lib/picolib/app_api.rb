@@ -10,6 +10,15 @@ module Picolib
         @debug = debug
       end
 
+      def get_app_list
+        path = @end_point + '/uHutt/app/list'
+        args = {
+          access_token: @access_token
+        }
+
+        result = Picolib.http_request(path, args, "get", {debug: @debug})
+      end
+
       def post_app_install(argument_params)
         path = @end_point + '/uHutt/app/install'
         args = {
