@@ -16,7 +16,7 @@ module Picolib
           access_token: @access_token
         }
 
-        result = Picolib.http_request(path, args, "get", {debug: @debug})
+        result = Picolib.http_request(path, args, "post", {debug: @debug})
       end
 
       def post_app_install(argument_params)
