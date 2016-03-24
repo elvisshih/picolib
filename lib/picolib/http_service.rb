@@ -1,5 +1,6 @@
 require "net/http"
 require "uri"
+require "openssl"
 
 module Picolib
   module HTTPService
@@ -9,8 +10,10 @@ module Picolib
         if verb == "post"
           req = Net::HTTP::Post.new(uri.path)
           # req.form_data = args[:params]
-          req.body = args[:params].to_json
-          req.content_type = 'application/json'
+          if args[:params]
+            req.body = args[:params].to_json
+            req.content_type = 'application/json'
+          end
         else
           req = Net::HTTP::Get.new(uri.path)
         end
