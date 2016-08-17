@@ -19,10 +19,11 @@ module Picolib
         result = Picolib.http_request(path, args, "get", {debug: @debug})
       end
 
-      def post_account_update
+      def post_account_update(params)
         path = @end_point + '/uHutt/account/update'
         args = {
-          access_token: @access_token
+          access_token: @access_token,
+          params: params
         }
 
         result = Picolib.http_request(path, args, "post", {debug: @debug})
