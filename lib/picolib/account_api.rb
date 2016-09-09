@@ -19,6 +19,24 @@ module Picolib
         result = Picolib.http_request(path, args, "get", {debug: @debug})
       end
 
+      def post_account_create(params)
+        path = @end_point + '/uHutt/account/create'
+        args = {
+          params: params
+        }
+
+        result = Picolib.http_request(path, args, "post", {debug: @debug})
+      end      
+
+      def post_account_active(params)
+        path = @end_point + '/uHutt/account/active'
+        args = {
+          params: params
+        }
+
+        result = Picolib.http_request(path, args, "post", {debug: @debug})
+      end      
+
       def post_account_info_update(params)
         path = @end_point + '/uHutt/account/info/update'
         args = {
@@ -49,15 +67,6 @@ module Picolib
         result = Picolib.http_request(path, args, "post", {debug: @debug})
       end
 
-      def post_account_active(params)
-        path = @end_point + '/uHutt/account/active'
-        args = {
-          access_token: @access_token,
-          params: params
-        }
-
-        result = Picolib.http_request(path, args, "post", {debug: @debug})
-      end      
     end
   end
 end
