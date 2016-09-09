@@ -48,6 +48,16 @@ module Picolib
 
         result = Picolib.http_request(path, args, "post", {debug: @debug})
       end
+
+      def post_account_active(params)
+        path = @end_point + '/uHutt/account/active'
+        args = {
+          access_token: @access_token,
+          params: params
+        }
+
+        result = Picolib.http_request(path, args, "post", {debug: @debug})
+      end      
     end
   end
 end
