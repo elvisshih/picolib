@@ -4,108 +4,89 @@ require "uri"
 module Picolib
   module Contact
     class API
-      def initialize(end_point, access_token, debug=true)
-        @end_point = end_point
-        @access_token = access_token
-        @debug = debug
+      def initialize(attributes)
+        @end_point = attributes[:end_point]
+        @access_token = attributes[:access_token]
+        @debug = attributes[:debug]
+        @sign = attributes[:sign]
+        @user_id = attributes[:user_id]
+        if @sign && @user_id
+          @args = {
+            sign: @sign,
+            user_id: @user_id
+          }
+        elsif @access_token
+          @args = {
+            access_token: @access_token
+          }
+        end
       end
 
       def get_organization_list
         path = @end_point + '/uHutt/organization/list'
-        args = {
-          access_token: @access_token
-        }
-
-        result = Picolib.http_request(path, args, "get", {debug: @debug})
+        result = Picolib.http_request(path, @args, "get", {debug: @debug})
       end
 
-      def post_contact_create(params)
+      def post_contact_create(argument_params)
         path = @end_point + '/uHutt/contact/create'
-        args = {
-          access_token: @access_token,
-          params: params
-        }
+        @args["params"] = params: argument_params
 
-        result = Picolib.http_request(path, args, "post", {debug: @debug})
+        result = Picolib.http_request(path, @args, "post", {debug: @debug})
       end
 
-      def post_contact_tags_members_set(params)
+      def post_contact_tags_members_set(argument_params)
         path = @end_point + '/uHutt/contact/tags/members/set'
-        args = {
-          access_token: @access_token,
-          params: params
-        }
+        @args["params"] = params: argument_params
 
-        result = Picolib.http_request(path, args, "post", {debug: @debug})
+        result = Picolib.http_request(path, @args, "post", {debug: @debug})
       end
 
-      def post_organization_create(params)
+      def post_organization_create(argument_params)
         path = @end_point + '/uHutt/organization/create'
-        args = {
-          access_token: @access_token,
-          params: params
-        }
+        @args["params"] = params: argument_params
 
-        result = Picolib.http_request(path, args, "post", {debug: @debug})
+        result = Picolib.http_request(path, @args, "post", {debug: @debug})
       end
 
-      def post_organization_member_remove(params)
+      def post_organization_member_remove(argument_params)
         path = @end_point + '/uHutt/organization/member/remove'
-        args = {
-          access_token: @access_token,
-          params: params
-        }
+        @args["params"] = params: argument_params
 
-        result = Picolib.http_request(path, args, "post", {debug: @debug})
+        result = Picolib.http_request(path, @args, "post", {debug: @debug})
       end
 
       def get_organization_chart
         path = @end_point + '/uHutt/organization/chart'
-        args = {
-          access_token: @access_token
-        }
 
-        result = Picolib.http_request(path, args, "get", {debug: @debug})
+        result = Picolib.http_request(path, @args, "get", {debug: @debug})
       end
 
-      def post_organization_chart_set(params)
+      def post_organization_chart_set(argument_params)
         path = @end_point + '/uHutt/organization/chart/set'
-        args = {
-          access_token: @access_token,
-          params: params
-        }
+        @args["params"] = params: argument_params
 
-        result = Picolib.http_request(path, args, "post", {debug: @debug})
+        result = Picolib.http_request(path, @args, "post", {debug: @debug})
       end
 
-      def post_organization_tags_add(params)
+      def post_organization_tags_add(argument_params)
         path = @end_point + '/uHutt/organization/tags/add'
-        args = {
-          access_token: @access_token,
-          params: params
-        }
+        @args["params"] = params: argument_params
 
-        result = Picolib.http_request(path, args, "post", {debug: @debug})
+        result = Picolib.http_request(path, @args, "post", {debug: @debug})
       end
 
-      def post_organization_tags_remove(params)
+      def post_organization_tags_remove(argument_params)
         path = @end_point + '/uHutt/organization/tags/remove'
-        args = {
-          access_token: @access_token,
-          params: params
-        }
+        @args["params"] = params: argument_params
 
-        result = Picolib.http_request(path, args, "post", {debug: @debug})
+        result = Picolib.http_request(path, @args, "post", {debug: @debug})
       end
 
-      def post_organization_tags_set(params)
+      def post_organization_tags_set(argument_params)
         path = @end_point + '/uHutt/contact/tags/set'
-        args = {
-          access_token: @access_token,
-          params: params
-        }
+        @args["params"] = params: argument_params
 
-        result = Picolib.http_request(path, args, "post", {debug: @debug})
+        result = Picolib.http_request(path, @args, "post", {debug: @debug})
       end
     end
   end
