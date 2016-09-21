@@ -29,28 +29,28 @@ module Picolib
 
       def post_contact_create(argument_params)
         path = @end_point + '/uHutt/contact/create'
-        @args["params"] = params: argument_params
+        @args["params"] = argument_params
 
         result = Picolib.http_request(path, @args, "post", {debug: @debug})
       end
 
       def post_contact_tags_members_set(argument_params)
         path = @end_point + '/uHutt/contact/tags/members/set'
-        @args["params"] = params: argument_params
+        @args["params"] = argument_params
 
         result = Picolib.http_request(path, @args, "post", {debug: @debug})
       end
 
       def post_organization_create(argument_params)
         path = @end_point + '/uHutt/organization/create'
-        @args["params"] = params: argument_params
+        @args["params"] = argument_params
 
         result = Picolib.http_request(path, @args, "post", {debug: @debug})
       end
 
       def post_organization_member_remove(argument_params)
         path = @end_point + '/uHutt/organization/member/remove'
-        @args["params"] = params: argument_params
+        @args["params"] = argument_params
 
         result = Picolib.http_request(path, @args, "post", {debug: @debug})
       end
@@ -63,28 +63,28 @@ module Picolib
 
       def post_organization_chart_set(argument_params)
         path = @end_point + '/uHutt/organization/chart/set'
-        @args["params"] = params: argument_params
+        @args["params"] = argument_params
 
         result = Picolib.http_request(path, @args, "post", {debug: @debug})
       end
 
       def post_organization_tags_add(argument_params)
         path = @end_point + '/uHutt/organization/tags/add'
-        @args["params"] = params: argument_params
+        @args["params"] = argument_params
 
         result = Picolib.http_request(path, @args, "post", {debug: @debug})
       end
 
       def post_organization_tags_remove(argument_params)
         path = @end_point + '/uHutt/organization/tags/remove'
-        @args["params"] = params: argument_params
+        @args["params"] = argument_params
 
         result = Picolib.http_request(path, @args, "post", {debug: @debug})
       end
 
       def post_organization_tags_set(argument_params)
         path = @end_point + '/uHutt/contact/tags/set'
-        @args["params"] = params: argument_params
+        @args["params"] = argument_params
 
         result = Picolib.http_request(path, @args, "post", {debug: @debug})
       end

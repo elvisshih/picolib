@@ -47,21 +47,21 @@ module Picolib
 
       def post_account_info_update(argument_params)
         path = @end_point + '/uHutt/account/info/update'
-        @args["params"] = params: argument_params
+        @args["params"] = argument_params
 
         result = Picolib.http_request(path, @args, "post", {debug: @debug})
       end
 
       def post_account_suspend(argument_params)
         path = @end_point + '/uHutt/account/suspend'
-        @args["params"] = params: argument_params
+        @args["params"] = argument_params
 
         result = Picolib.http_request(path, @args, "post", {debug: @debug})
       end
 
       def post_account_unsuspend(argument_params)
         path = @end_point + '/uHutt/account/unsuspend'
-        @args["params"] = params: argument_params
+        @args["params"] = argument_params
 
         result = Picolib.http_request(path, @args, "post", {debug: @debug})
       end
