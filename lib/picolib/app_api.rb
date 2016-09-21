@@ -30,14 +30,14 @@ module Picolib
 
       def post_app_install(argument_params)
         path = @end_point + '/uHutt/app/install'
-        @args["params"] = argument_params
+        @args[:params] = argument_params
 
         result = Picolib.http_request(path, @args, "post", {debug: @debug})
       end
 
       def post_app_uninstall(argument_params)
         path = @end_point + '/uHutt/app/uninstall'
-        @args["params"] = argument_params
+        @args[:params] = argument_params
 
         result = Picolib.http_request(path, @args, "post", {debug: @debug})
       end
