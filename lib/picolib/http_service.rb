@@ -10,18 +10,19 @@ module Picolib
         if verb == "post"
           req = Net::HTTP::Post.new(uri.path)
           # req.form_data = args[:params]
-          if args[:sign] && args[:user_id]
-            req.add_field 'sign', args[:sign]
-            req.add_field 'user-id', args[:user_id] 
-          elsif args[:access_token]
-            req.add_field 'authorization', args[:access_token]
-          end
           if args[:params]
             req.body = args[:params].to_json
             req.content_type = 'application/json'
           end
         else
           req = Net::HTTP::Get.new(uri.path)
+        end
+
+        if args[:sign] && args[:user_id]
+          req.add_field 'sign', args[:sign]
+          req.add_field 'user-id', args[:user_id] 
+        elsif args[:access_token]
+          req.add_field 'authorization', args[:access_token]
         end
 
         http.request req
