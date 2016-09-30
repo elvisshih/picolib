@@ -19,6 +19,8 @@ module Picolib
           @args = {
             access_token: @access_token
           }
+        else
+          @args = {}
         end
       end
 
@@ -29,18 +31,14 @@ module Picolib
 
       def post_account_create(argument_params)
         path = @end_point + '/uHutt/account/create'
-        @args = {
-          params: argument_params
-        }
+        @args[:params] = argument_params
 
         result = Picolib.http_request(path, @args, "post", {debug: @debug})
       end      
 
       def post_account_active(argument_params)
         path = @end_point + '/uHutt/account/active'
-        @args = {
-          params: argument_params
-        }
+        @args[:params] = argument_params
 
         result = Picolib.http_request(path, @args, "post", {debug: @debug})
       end      
