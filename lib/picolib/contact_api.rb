@@ -19,6 +19,8 @@ module Picolib
           @args = {
             access_token: @access_token
           }
+        else
+          @args = {}
         end
       end
 
