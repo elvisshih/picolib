@@ -66,6 +66,12 @@ module Picolib
         result = Picolib.http_request(path, @args, "post", {debug: @debug})
       end
 
+      def post_account_verify_resend(argument_params)
+        path = @end_point + '/uHutt/account/verifycode/resend'
+        @args[:params] = argument_params
+
+        result = Picolib.http_request(path, @args, "post", {debug: @debug})
+      end
     end
   end
 end
