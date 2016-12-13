@@ -12,14 +12,14 @@ module Picolib
         @user_id = attributes[:user_id]
         if @sign && @user_id
           @args = {
-            header: {
+            headers: {
               sign: @sign,
               user_id: @user_id
             }
           }
         elsif @access_token
           @args = {
-            header: { authorization: @access_token }
+            headers: { authorization: @access_token }
           }
         else
           @args = {}

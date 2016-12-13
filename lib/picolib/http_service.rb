@@ -18,8 +18,11 @@ module Picolib
           req = Net::HTTP::Get.new(uri.path)
         end
 
-        if args[:header]
-          args[:header].keys.each {|key| req.add_field key, args[:header][key]}
+        if args[:headers]
+          if options[:debug]
+            puts "Assign headers: #{args[:headers]}"
+          end
+          args[:headers].keys.each {|key| req.add_field key, args[:headers][key]}
         end
 
         # if args[:access_token]
@@ -31,8 +34,8 @@ module Picolib
 
       if options[:debug]
         puts "============ API: #{uri} ==============="
-        if args[:header]
-          puts "    header: #{args[:header].to_json}"
+        if args[:headers]
+          puts "    headers: #{args[:headers].to_json}"
         end
         if args[:params]
           puts "     params: #{args[:params].to_json}"
