@@ -6,7 +6,7 @@ module Picolib
     class API
       def initialize(attributes)
         @end_point = attributes[:end_point]
-        @access_token = attributes[:access_token]
+        @headers = attributes[:headers]
         @debug = attributes[:debug]
         @sign = attributes[:sign]
         @user_id = attributes[:user_id]
@@ -17,9 +17,9 @@ module Picolib
               user_id: @user_id
             }
           }
-        elsif @access_token
+        elsif @headers
           @args = {
-            headers: { authorization: @access_token }
+            headers: @headers
           }
         else
           @args = {}
