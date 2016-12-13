@@ -19,10 +19,7 @@ module Picolib
         end
 
         if args[:headers]
-          if options[:debug]
-            puts "Assign headers: #{args[:headers]}"
-          end
-          args[:headers].keys.each {|key| req.add_field key, args[:headers][key]}
+          args[:headers].keys.each {|key| req.add_field key.to_s, args[:headers][key]}
         end
 
         # if args[:access_token]
