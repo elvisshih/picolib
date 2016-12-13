@@ -18,18 +18,22 @@ module Picolib
           req = Net::HTTP::Get.new(uri.path)
         end
 
-        if args[:sign] && args[:user_id]
-          req.add_field 'sign', args[:sign]
-          req.add_field 'user-id', args[:user_id] 
-        elsif args[:access_token]
-          req.add_field 'authorization', args[:access_token]
+        if args[:header]
+          args[:header].keys.each {|key| req.add_field key, args[:header][key]}
         end
+
+        # if args[:access_token]
+        #   req.add_field 'authorization', args[:access_token]
+        # end
 
         http.request req
       end
 
       if options[:debug]
         puts "============ API: #{uri} ==============="
+        if args[:header]
+          puts "    header: #{args[:header].to_json}"
+        end
         if args[:params]
           puts "     params: #{args[:params].to_json}"
         end
