@@ -83,6 +83,20 @@ module Picolib
 
         result = Picolib.http_request(path, @args, "post", {debug: @debug})
       end
+
+      def post_organization_rename(argument_params)
+        path = @end_point + '/uHutt/organization/rename'
+        @args[:params] = argument_params
+
+        result = Picolib.http_request(path, @args, "post", {debug: @debug})
+      end
+
+      def post_organization_member_rename(argument_params)
+        path = @end_point + '/uHutt/organization/member/rename'
+        @args[:params] = argument_params
+
+        result = Picolib.http_request(path, @args, "post", {debug: @debug})
+      end
     end
   end
 end
