@@ -1,0 +1,61 @@
+en:
+  picolib:
+    errors:
+      messages:
+        ################### Account API #########################
+        uAccountError: "Unexpected error: %{error}."
+        accountValidateFail: "Invalid email or password."
+        accountIsActive: "Account is already active."
+        accountIsExist: "Account already exists."
+        accountIsNotFound: "Account is not found."
+        accountConnectFail: "Invalid email or password."
+        emailConnectFail: "Invalid email or password."
+        mobileConnectFail: 'Invalid mobile phone number or password.'
+        accountIsNotValid: "Invalid email or password."
+        # accountIsNotValidated is for older version of the backend
+        accountIsNotValidated: "Invalid email or password."
+        accountIsNotPending: "Account was already confirmed, please try signing in."
+        accountIsPending: "Account is inactive."
+        accountIsSuspended: "Account is suspended."
+        accountEmailUnverified: "Email doesn't be confirmed yet."
+        accountSmsUnverified: "Mobile phone doesn't be confirmed yet."
+        accountInvitationUnverified: "Account doesn't exist."
+        accountUnverified: "Account doesn't exist."
+        cannotInviteYourself: "Cannot invite youself."
+        emailHasBeenUsed: "This email already exists, please sign in with email and password."
+        tempPasswordNotMatch:  "Temp password is not match."
+        mobileHasBeenUsed: "Mobile phone number has been used."
+        accountHasNoDataToUpdate: "Nothing to update account."
+        hasNoUserImage: "No user avatar image."
+        invalidEmail: "Invalid email."
+        invalidNickname: "Invalid nickname."
+        invalidPassword: "Invalid password."
+        tagHasNoEmail: "Reset password token has expired."
+        serviceIsExist: "Service already exists."
+        serviceIsNotFound: "Service is not found."
+        wrongUserType: "Wrong user type."
+        linkExpired: "Reset password token has expired."
+        picoSignInvalid: "Invalid picosign."
+        ccapIsNotMatched: "Vertification code did't match."
+        accountAlreadyConfirm: "Account already confirmed."
+        tempPasswordIsNotMatched: "Temp password is not match."
+        tempPasswordIsNotFound: "Temp password is not found."
+        mobileNumberError: "Mobile phone number error."
+        ################### Client API #########################
+        uClientError: "Unexpected error: %{error}."
+        clientIsNotFound: "Client is not found."
+        clientIsnotInTheList: "Client is not in list."
+        ################### Contact API #########################
+        uContactError: "Unexpected error: %{error}."
+        contactIsNotFound: "Contact is not found."
+        organizationIsNotFound: "Organization is not found."
+        organizationIsExisted: "Organization already exists."
+        organizationTagsIsExisted: "Group already exists."
+        isAlreadyMember: "Account is already a member of organization."
+        membersRestricted: "Account is restricted."
+        organizationIstheLast: "Organization is the last one."
+        ################### Organization API #########################
+        uOrganizationError: "Unexpected error: %{error}."
+        ################### Tags API #########################
+        uTagsError: "Unexpected error: %{error}."
+        #########################################################

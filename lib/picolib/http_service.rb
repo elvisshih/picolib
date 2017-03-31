@@ -37,10 +37,35 @@ module Picolib
         if args[:params]
           puts "     params: #{args[:params].to_json}"
         end
-        puts "     result: #{res.body}"
+        if res.class == 'String'
+          puts "     string result: #{res}"
+        else
+          puts "     result: #{res.body}"
+        end
         puts "============ END ======================="
       end
-      return res
+
+      case res
+      when Net::HTTPSuccess, Net::HTTPRedirection
+        jsonResult = JSON.parse res.body
+        if not jsonResult["success"]
+          if jsonResult["errorType"]
+            options = jsonResult["errorMsg"] && {error: jsonResult["errorMsg"]} || {}
+            jsonResult["errorMsg"] = Picolib::Errors::Messages.new(jsonResult["errorType"], options)
+          elsif jsonResult["message"]
+            jsonResult["errorMsg"] = jsonResult["message"]
+          else
+            jsonResult["errorMsg"] = Picolib::Errors::Messages.new('unexpected_error')
+          end
+        end
+        return jsonResult
+      else
+        if res.class == 'String'
+          return {"success"=> false, "errorMsg"=> res}
+        else
+          return {"success"=> false, "errorMsg"=> res.body}
+        end
+      end
     end
   end
 end
