@@ -7,6 +7,7 @@ require "picolib/client_api"
 require "picolib/contact_api"
 require "picolib/oauth2_api"
 require "picolib/pico_sign"
+require "picolib/errors/picolib_error"
 
 # HTTP module
 require "picolib/http_service"
@@ -28,5 +29,9 @@ module Picolib
 
   def self.encode_pico_sign(payload, client_secret)
   	PicoSign.encode_signed_request(payload, client_secret)
-  end  
+  end
+
+  def self.error_message(key, attributes = {})
+    Errors.message(key, attributes)
+  end
 end

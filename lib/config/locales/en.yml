@@ -2,6 +2,7 @@ en:
   picolib:
     errors:
       messages:
+        unexpectedError: "Unexpected error: %{error}."
         ################### Account API #########################
         uAccountError: "Unexpected error: %{error}."
         accountValidateFail: "Invalid email or password."

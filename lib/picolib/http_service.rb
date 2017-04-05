@@ -51,11 +51,11 @@ module Picolib
         if not jsonResult["success"]
           if jsonResult["errorType"]
             options = jsonResult["errorMsg"] && {error: jsonResult["errorMsg"]} || {}
-            jsonResult["errorMsg"] = Picolib::Errors::Messages.new(jsonResult["errorType"], options)
+            jsonResult["errorMsg"] = Picolib.error_message(jsonResult["errorType"], options)
           elsif jsonResult["message"]
             jsonResult["errorMsg"] = jsonResult["message"]
           else
-            jsonResult["errorMsg"] = Picolib::Errors::Messages.new('unexpected_error')
+            jsonResult["errorMsg"] = Picolib.error_message('unexpectedError')
           end
         end
         return jsonResult
