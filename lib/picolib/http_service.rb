@@ -50,12 +50,12 @@ module Picolib
         jsonResult = JSON.parse res.body
         if not jsonResult["success"]
           if jsonResult["errorType"]
-            options = jsonResult["errorMsg"] && {error: jsonResult["errorMsg"]} || {}
+            options = jsonResult["message"] && {error: jsonResult["message"]} || {}
             jsonResult["errorMsg"] = Picolib.error_message(jsonResult["errorType"], options)
           elsif jsonResult["message"]
-            jsonResult["errorMsg"] = jsonResult["message"]
+            jsonResult["errorMsg"] = Picolib.error_message('unexpectedError', {error: jsonResult["message"]})
           else
-            jsonResult["errorMsg"] = Picolib.error_message('unexpectedError')
+            jsonResult["errorMsg"] = Picolib.error_message('unexpectedError', {error: ""})
           end
         end
         return jsonResult

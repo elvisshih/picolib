@@ -3,6 +3,8 @@ en:
     errors:
       messages:
         unexpectedError: "Unexpected error: %{error}."
+        unauthorized: "Unauthorized user."
+        validationError: "Validation unsuccessful."
         ################### Account API #########################
         uAccountError: "Unexpected error: %{error}."
         accountValidateFail: "Invalid email or password."
@@ -52,6 +54,7 @@ en:
         organizationIsNotFound: "Organization is not found."
         organizationIsExisted: "Organization already exists."
         organizationTagsIsExisted: "Group already exists."
+        organizationTagsIsNotExisted: "Group doesn't exist."
         isAlreadyMember: "Account is already a member of organization."
         membersRestricted: "Account is restricted."
         organizationIstheLast: "Organization is the last one."
