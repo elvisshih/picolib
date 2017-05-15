@@ -5,6 +5,7 @@ en:
         unexpectedError: "Unexpected error: %{error}."
         unauthorized: "Unauthorized user."
         validationError: "Validation unsuccessful."
+        tokenIsNotFound: "Token is not found."
         ################### Account API #########################
         uAccountError: "Unexpected error: %{error}."
         accountValidateFail: "Invalid email or password."
