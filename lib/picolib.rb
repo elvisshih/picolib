@@ -9,6 +9,7 @@ require "picolib/oauth2_api"
 require "picolib/pico_sign"
 require "picolib/errors/picolib_error"
 require "picolib/system_api"
+require "picolib/webhook_api"
 
 # HTTP module
 require "picolib/http_service"
